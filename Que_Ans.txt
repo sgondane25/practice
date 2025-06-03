@@ -1,0 +1,341 @@
+What is Java String Pool?
+Java String Pool is a pool of unique strings stored in the Java heap memory. When you create a string using double quotes
+ (e.g., String str = "Hello";), Java checks if the string already exists in the pool. 
+ If it does, the existing reference is returned; otherwise, a new string is created in the pool.
+
+Explain different data types in Java.
+Java has two categories of data types: primitive and reference types. 
+Primitive data types include byte, short, int, long, float, double, char, and boolean. 
+Reference data types include classes, interfaces, arrays, and enumerations.
+
+What is a Class Variable?
+A class variable, also known as a static variable, is a variable that belongs to the class rather than any instance of the class. 
+It is shared among all instances of the class.
+
+What is the default value stored in Local Variables?
+Local variables in Java are not initialized by default and must be assigned a value before use. 
+Accessing an uninitialized local variable will result in a compilation error.
+
+Explain the difference between instance variable and a class variable.
+Instance variables are variables declared within a class but outside any method, constructor, or block. 
+Each instance of the class has its own copy of instance variables. Class variables, on the other hand, are 
+declared with the static keyword within a class and are shared among all instances of the class.
+
+What is a static variable?
+A static variable, also known as a class variable, is a variable that belongs to the class rather than any instance of the class. 
+It is shared among all instances of the class.
+
+What are different methods of Object class?
+Some commonly used methods of the Object class in Java are toString(), equals(), hashCode(), getClass(), finalize(), and clone().
+
+What’s the difference between the methods sleep() and wait()?
+The sleep() method is used to pause the execution of the current thread for a specified amount of time. 
+The wait() method, on the other hand, is used for inter-thread communication and causes the current thread to wait until 
+another thread notifies it or a specified amount of time elapses.
+
+What are the differences between String and StringBuffer?
+Strings in Java are immutable, meaning their values cannot be changed once they are created. 
+StringBuffer is a mutable sequence of characters and allows for dynamic changes.
+
+What are the differences between StringBuffer and StringBuilder?
+StringBuffer is synchronized, making it thread-safe, whereas StringBuilder is not synchronized 
+and therefore not thread-safe. StringBuilder typically has better performance in single-threaded scenarios.
+
+What is a Marker Interface?
+A marker interface in Java is an interface with no methods. It serves as a tag to inform the 
+compiler or runtime environment about the behavior of the implementing class. Examples include Serializable and Cloneable.
+
+What is a singleton class in Java? And How to implement a singleton class?
+A singleton class in Java is a class that can have only one instance at a time. 
+To implement a singleton class, you typically make the constructor private to prevent instantiation from 
+outside the class and provide a static method that returns the instance of the class.
+
+Difference between ArrayList and LinkedList
+ArrayList internally uses a dynamic array to store elements, allowing for fast random access but 
+slower insertion and deletion. LinkedList, on the other hand, uses a doubly-linked list, providing fast insertion 
+and deletion but slower random access.
+
+Difference between HashMap and ConcurrentHashMap
+HashMap is not thread-safe and can lead to a ConcurrentModificationException if modified concurrently. ConcurrentHashMap
+ is a thread-safe version of HashMap designed for concurrent use without external synchronization.
+
+Internal working of HashMap
+HashMap internally uses an array of linked lists or a tree (in Java 8 and later) to store key-value pairs. 
+The hash code of the keys is used to determine the index of the array where the key-value pair should be stored.
+
+Difference between equals and hashCode
+The equals() method is used to compare the contents of two objects for equality, typically overridden to 
+provide custom equality checks. The hashCode() method returns a hash code value for the object, used by hash-based data 
+structures like HashMap for efficient storage and retrieval.
+
+Different types of annotations
+Annotations in Java can be categorized into built-in annotations like @Override, @Deprecated, and @SuppressWarnings, 
+and custom annotations defined by users.
+
+Use of @ComponentScan annotation
+@ComponentScan annotation is used in Spring Framework to automatically scan and register Spring beans 
+(components, services, repositories, etc.) within a specified package and its sub-packages.
+
+Difference between Controller and RestController
+In Spring MVC, a Controller handles traditional web requests and returns a view (HTML page). 
+A RestController, on the other hand, is specialized for handling RESTful requests and returns data (typically in JSON or XML format) 
+rather than a view.
+
+Package structure of microservice
+The package structure of a microservice architecture typically follows a modular approach, organizing code into
+ packages based on functionality or domain. Common packages might include controllers, services, repositories, models, configurations, 
+ and utilities.
+
+Difference between PUT and PATCH
+PUT is used to update a resource completely, replacing the existing resource with the new one. 
+PATCH is used to apply partial modifications to a resource, updating only the specified fields.
+
+What is a Trigger?
+A trigger is a database object that automatically executes a specified action (such as insert, update, delete) 
+in response to certain database events (such as data manipulation operations on a table).
+
+What are indexes?
+Indexes are database objects used to improve the speed of data retrieval operations on database tables by 
+providing fast access to rows based on the values of certain columns.
+
+What is a stored procedure?
+A stored procedure is a prepared SQL code that can be saved in the database and reused. It consists of a 
+series of SQL statements and procedural logic, which can be executed by calling the procedure name.
+
+Lifecycle of Hibernate object?
+The lifecycle of a Hibernate object consists of several states: transient (newly created but not associated with any session), 
+persistent (associated with a session and has a corresponding row in the database), 
+detached (previously associated with a session but not currently), and removed (marked for deletion).
+
+Find 2nd highest salary in SQL?
+SELECT DISTINCT Salary FROM Employees ORDER BY Salary DESC LIMIT 1 OFFSET 1;
+
+
+How to assign a value to each enum object, such as month number on a Month enum?
+public enum Month {
+    JANUARY(1), FEBRUARY(2), MARCH(3), APRIL(4), MAY(5), JUNE(6), JULY(7), AUGUST(8), SEPTEMBER(9), OCTOBER(10),  NOVEMBER(11), DECEMBER(12);
+
+    private final int number;
+
+    public Month (int number) {
+        this.number = number;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+}
+
+What difference between java 8 and java 17?
+Java 8 introduced major features like lambda expressions, the Stream API, default methods in interfaces, 
+and the java.time package. Java 17, being a later version, includes various improvements and new features
+ like sealed classes, pattern matching, and more efficient garbage collection.
+
+
+What is UUID and its uses?
+UUID (Universally Unique Identifier) is a 128-bit unique identifier standardized by RFC 4122. 
+It's commonly used to uniquely identify information without needing a central authority to generate IDs. 
+It's often used in databases, distributed systems, and various other scenarios where unique identification is needed.
+
+
+What is lambda expression?
+Lambda expressions in Java are a concise way to represent anonymous functions, i.e., functions without a name. 
+They enable you to treat functionality as a method argument or create simple, inline implementations of functional interfaces.
+
+
+Can we define multiple abstract method in functional interface?
+No, a functional interface in Java can have only one abstract method. This is enforced by the @FunctionalInterface annotation.
+ Adding more abstract methods would violate the contract of a functional interface.
+
+
+Can we add multiple non abstract method in functional interface?
+Yes, you can add multiple non-abstract methods (default methods) to a functional interface without breaking 
+its functionality as long as it has only one abstract method.
+
+
+Have ever used try with resource in your applicaiton? What is used of that?
+The try-with-resources statement in Java automatically closes resources like streams, files, etc., 
+after they are no longer needed, even if an exception is thrown. This ensures that resources are properly released 
+without needing explicit finally blocks.
+
+
+What at is the use of transient keyword?
+The transient keyword in Java is used to indicate that a field should not be serialized when the object containing
+ it is serialized. This is useful when you have fields that should not be persisted or transmitted.
+
+
+What are the disadvantages of serialization?
+Some disadvantages of serialization include:
+Performance overhead
+Tight coupling between the serialized format and the object structure
+Security concerns (serialization can be used for malicious purposes if not properly handled)
+
+
+Is hashMap thread safe and synchrons?
+No, HashMap is not thread-safe. However, you can make it thread-safe by using Collections.synchronizedMap(new HashMap<>())
+ or by using ConcurrentHashMap.
+
+
+What is stack memory and heap memory?
+Stack memory is used for static memory allocation and is responsible for keeping track of method invocations and local variables.
+Heap memory is used for dynamic memory allocation and is where objects and their instance variables are stored.
+
+
+How to create immutable class?
+To create an immutable class in Java, follow these steps:
+Declare the class as final so it cannot be subclassed.
+Declare all fields as final and private.
+Don't provide setter methods.
+Ensure that any mutable fields are defensively copied in the constructor.
+Don't expose mutable objects directly; instead, return defensive copies.
+
+
+If you want String as a mutable then what you can use?
+Instead of using mutable String, you can use StringBuilder or StringBuffer for mutable string manipulation.
+
+
+How you provided security to your spring boot applicaiton?
+Security in Spring Boot applications is often implemented using Spring Security. You can configure authentication, authorization, 
+and other security features using Spring Security's extensive configuration options.
+
+
+Any idea how to implement spring security?
+Spring Security can be implemented by configuring security filters, authentication providers, and authorization rules in the
+ application's configuration. You can use various authentication mechanisms like form-based authentication, OAuth, JWT, etc.,
+ based on your requirements.
+
+
+What are design patterns you know?
+Some common design patterns include Singleton, Factory, Builder, Observer, Strategy, Adapter, Decorator, and many more. 
+These patterns provide solutions to recurring design problems in software development.
+
+
+What is builder design pattern?
+The Builder pattern is a creational design pattern that separates the construction of a complex object from its representation,
+ allowing the same construction process to create different representations. It's useful when an object has many optional parameters
+ or a complex construction process.
+
+
+What are the different design pattern?
+Design patterns are broadly categorized into three categories: creational, structural, and behavioral patterns. Some examples 
+include Singleton, Factory Method, Abstract Factory, Adapter, Composite, Observer, Strategy, and many more.
+
+
+What is the use of restController annotation?
+In Spring, the @RestController annotation is used to annotate classes that define RESTful controller endpoints. It combines 
+@Controller and @ResponseBody, indicating that the return value of the methods should be serialized directly to the HTTP response body.
+
+
+How response will convert to json from API?
+In Spring Boot, response objects are automatically serialized to JSON using libraries like Jackson. You don't need to do 
+anything special to convert responses to JSON as long as your controller methods return POJOs or collections.
+
+
+What is use of service annotation?
+The @Service annotation in Spring is used to annotate classes that perform service tasks. It's a specialization of the 
+@Component annotation and is used to identify beans as service components in the application context.
+
+
+What is the use of componant annotation?
+The @Component annotation in Spring is a generic stereotype annotation used to designate a class as a Spring component. 
+Spring components are beans managed by the Spring IoC container.
+
+
+What are the different type of rest APIs?
+REST APIs can be categorized based on their architectural style, such as:
+RESTful Web Services: These follow the REST architectural principles.
+SOAP Web Services: These use the SOAP protocol for communication.
+GraphQL APIs: These use a query language for APIs.
+RPC APIs: These use remote procedure calls for communication.
+
+
+What is @Head
+@Head is not a standard annotation in Spring. However, in the context of HTTP, the HEAD method is similar to GET but 
+without the response body. It's often used to retrieve metadata about a resource without transferring the entire content.
+
+
+What is @Trace
+@Trace is not a standard annotation in Spring. However, in the context of Spring Boot Actuator, the /trace endpoint provides 
+trace information about HTTP requests handled by the application.
+
+
+What is difference between put and patch?
+Both PUT and PATCH are HTTP methods used for updating resources. However, the main difference lies in the way they handle updates:
+PUT is used to completely replace a resource or create it if it doesn't exist. The entire resource representation is provided in the request body.
+PATCH is used to partially update a resource. It only updates the fields provided in the request body without affecting other fields.
+
+
+What is difference between @Entity and @Table annotation?
+In JPA (Java Persistence API), @Entity is used to annotate a class as an entity, indicating that it's mapped to a database table. 
+On the other hand, @Table is used to provide additional details about the table to which the entity is mapped, such as the name of the table.
+
+
+Which tool you used for version control?
+Git is a widely used version control tool for managing source code. Other popular version control systems include Subversion (SVN),
+ Mercurial, and Perforce.
+
+
+If there are multiple commit in your branch and you want to merge it into single commit, Which command we used it?
+To merge multiple commits into a single commit in Git, you can use the interactive rebase feature:
+git rebase -i HEAD~n
+Replace n with the number of commits you want to squash. Then, mark the commits you want to squash, save the file, and follow the 
+instructions to complete the rebase.
+
+
+Squasing of commitin git?
+Squashing commits in Git refers to combining multiple commits into a single commit, usually for cleaner commit history. This is 
+often done during code review or before merging a feature branch into the main branch.
+
+
+What is used of git rebase?
+Git's rebase command, which is used to reapply commits on top of another base tip. This can be useful for integrating changes from 
+one branch into another or for cleaning up commit history.
+
+
+What are the advantages of NoSql database?
+Some advantages of NoSQL databases include:
+Flexible schema: NoSQL databases allow for dynamic schema changes and can handle semi-structured and unstructured data well.
+Scalability: NoSQL databases are often designed to scale horizontally, making them suitable for handling large amounts of data and high traffic loads.
+Performance: NoSQL databases can provide high performance for specific use cases, especially those involving large-scale data storage and retrieval.
+Distributed data management: Many NoSQL databases are designed to operate in distributed environments, providing fault tolerance and data replication capabilities.
+
+Internal Working of HashMap
+When we create hashMap it internally creates bucket structure, with capacity of 16. As starting capacity of hashMap is 16. From 0-16 index
+the bucket is created. Each bucket internally uses linked-list. And linked list contains a list of node.
+Internal structure of node consist of key, value, hash, next.
+
+Map<String, Employee> emp = new HashMap<>();
+emp.put("Shubham", new Employee(1, "Shubham", "SSE"));
+emp.put("Krishna", new Employee(2, "Krishna", "SSE"));
+emp.put("Tarun", new Employee(3, "Tarun", "SSE"));
+emp.put("Dhruv", new Employee(4, "Dhruv", "SSE"));
+
+put(K k, V v)
+	hash(k)
+	index = hash &(n-1)
+uses Hashing colision if index created same for 2 entries, then it will compare both objects by equals method. If both objects has same hash
+then it will replace the old entry else added new node. And update the reference in 1st node.
+If we pass key as a null, then the data is stored in 0th index of the bucket.
+
+Java 7 Compatibility
+Spring Boot 1.5.x: This is the last Spring Boot version that supports Java 7.
+Maven: Maven 3.2.x or later is compatible with Java 7.
+
+Java 8 Compatibility
+Spring Boot 2.x: All versions of Spring Boot 2.x support Java 8. It's recommended to use at least Spring Boot 2.1.x for better features and support.
+Maven: Maven 3.3.x and later are compatible with Java 8.
+
+Microservice design pattern ::
+	API Gateway Pattern:
+	Server-Side Discovery Pattern:
+	Database per Service Pattern:
+	Shared Database Pattern:
+	Saga Pattern:
+	API Gateway Security Pattern:
+	
+
+Exception Hierarchy
+Collection Hierarchy
+Http code 200, 400, 501, 403, 404
+
+

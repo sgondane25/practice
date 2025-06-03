@@ -1,0 +1,93 @@
+Remove Column
+ALTER TABLE table_name DROP COLUMN column_name;
+
+View Databases
+SHOW DATABASES;
+
+Delete vs Truncate
+Delete deletes rows in table. Truncate deletes all records in table
+Delete can be rollback but truncate can not
+Delete DML and slower whereas truncate is faster DDL
+
+Enum
+The ENUM data type in MySQL is a string object. It allows us to limit the value chosen from a list of permitted values in the column specification at the time of table creation
+
+A primary key can constitute one or more fields of a table to identify records in a table uniquely. On the other hand, a unique key prevents two rows from having duplicate entries in a column.
+A table cannot have more than one primary key in a relational database, while there can be multiple unique keys per table.
+A primary key column cannot contain NULL values, whereas a unique key can have NULL values, but only one NULL is allowed in a table.
+A primary key should be unique, but a unique key cannot necessarily be the primary key.
+The primary key by default is a clustered index where data is physically organized in the sequential index. In contrast, the unique key is a unique non-clustered index.
+The primary key implements entity integrity, whereas the unique key enforces unique data.
+
+A primary key constraint in the relational database acts as a unique identifier for every row in the table. In contrast, a foreign key constraint establishes a relationship between two different tables to uniquely identify a row of the same table or another table.
+The primary key column does not store NULL values, whereas the foreign key can accept more than one NULL value.
+Each table in a relational database can't define more than one primary key while we can specify multiple foreign keys in a table.
+We can't remove the parent table's primary key value, which is referenced with a foreign key column in the child table. In contrast, we can delete the child table's foreign key value even though they refer to the parent table's primary key.
+A primary key is a unique and non-null constraint, so no two rows can have identical values for a primary key attribute, whereas foreign key fields can store duplicate values.
+We can insert the values into the primary key column without any limitation.
+
+Trigger 
+
+The main difference between the trigger and procedure is that a trigger is called automatically when a data modification event is made against a table. In contrast, a stored procedure must be called explicitly.
+Triggers help us to enforce business rules.
+Triggers help us to validate data even before they are inserted or updated.
+Triggers help us to keep a log of records like maintaining audit trails in tables.
+SQL triggers provide an alternative way to check the integrity of data.
+Triggers provide an alternative way to run the scheduled task.
+
+CREATE TRIGGER trigger_name    
+    (AFTER | BEFORE) (INSERT | UPDATE | DELETE)  
+         ON table_name FOR EACH ROW    
+         BEGIN    
+        --variable declarations    
+        --trigger code    
+        END;     
+
+View
+CREATE [OR REPLACE] VIEW view_name AS    
+SELECT columns    
+FROM tables    
+[WHERE conditions];    
+
+OR REPLACE: It is optional. It is used when a VIEW already exists. If you do not specify this clause and the VIEW already exists, the CREATE VIEW statement will return an error.
+
+view_name: It specifies the name of the VIEW that you want to create in MySQL.
+
+WHERE conditions: It is also optional. It specifies the conditions that must be met for the records to be included in the VIEW.
+
+Why we use View?
+MySQL view provides the following advantages to the user:
+
+Simplify complex query
+
+It allows the user to simplify complex queries. If we are using the complex query, we can create a view based on it to use a simple SELECT statement instead of typing the complex query again.
+
+Increases the Re-usability
+
+We know that View simplifies the complex queries and converts them into a single line of code to use VIEWS. Such type of code makes it easier to integrate with our application. This will eliminate the chances of repeatedly writing the same formula in every query, making the code reusable and more readable.
+
+UPDATE statement works on SQL views only if they are direct subset of table data, without any aggregation or modification. So you can use UPDATE statement on views if the SELECT statement for view :
+
+Doesn’t have DISTINCT, GROUP BY, HAVING, Aggregations, SET functions or operators
+Doesn’t refer to multiple tables
+Doesn’t have calculated columns
+
+Join syntax
+
+SELECT columns  
+FROM table1  
+LEFT [OUTER] JOIN table2  
+ON table1.column = table2.column;  
+
+DELETE T1, T2    
+FROM    T1    
+INNER JOIN T2    
+ON T1.student_id=T2.student.id    
+WHERE   T1.student_id=2;  
+
+Having vs where clause
+
+WHERE clause filters individual rows, whereas the HAVING clause filters groups instead of one row at a time.
+We cannot use the WHERE clause with aggregate functions because it works for filtering individual rows. In contrast, HAVING can works with aggregate functions because it is used to filter groups.
+Row operations are handled by the WHERE clause, while the HAVING clause handles column operations to summarized rows or groups.
+WHERE comes before GROUP BY, which means WHERE clause filter rows before performing aggregate calculations. HAVING comes after GROUP BY, which means the HAVING clause filters rows after performing aggregate calculations. Consequently, HAVING is slower than WHERE in terms of efficiency and should be avoided wherever possible.

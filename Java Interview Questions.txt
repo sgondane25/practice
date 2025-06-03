@@ -1,0 +1,184 @@
+
+Can static method override,
+- No, we cannot override static methods because method overriding is based on dynamic binding at runtime and the static methods are bonded using static binding at compile time. So, we cannot override static methods.
+
+what happens when we make constructor private.
+- Yes, we can declare a constructor as private. If we declare a constructor as private we are not able to create an object outside of a class . We can use this private constructor in the Singleton Design Pattern
+
+- A private constructor does not allow a class to be subclassed.
+A private constructor does not allow to create an object outside the class.
+If all the constant methods are there in our class we can use a private constructor.
+If all the methods are static then we can use a private constructor.
+If we try to extend a class which is having private constructor compile time error will occur.
+
+What when we define constuctor in interface
+No, you cannot have a constructor within an interface in Java.
+
+You can have only public, static, final variables and, public, abstract, methods as of Java7.
+
+From Java8 onwards interfaces allow default methods and static methods.
+
+From Java9 onwards interfaces allow private and private static methods.
+I
+n short, it does not accept methods without return type in an interface. If you add return type to the MyInterface() method then it is considered as a normal method and the program gets compiled without errors.
+
+ The variable in an interface is public, static, and final by default.
+
+🔔 If any variable in an interface is defined without public, static, and final keywords then, the compiler automatically adds the same.
+
+🔔 No access modifier is allowed except the public for interface variables.
+
+🔔 Every variable of an interface must be initialized in the interface itself.
+
+🔔 The class that implements an interface can not modify the interface variable, but it may use as it defined in the interface.
+
+Comparable vs comparator
+comaprable default natural sorting, java.lang. only comparTO method
+as comparator cutom sorting, java.util package, two method compare and equals
+
+how garbage collection happen
+
+
+when to use runnable and extends thread.
+
+
+JWT Oauth - How your application provide security
+
+
+Hibernate callback
+How to avoid dirty read in database
+
+what is contract between hashcode and equals method
+
+Levels of classloader
+prefix and suffix in java8
+how to remove duplicates from list of object.
+Path vs Classpath
+Identity Hashmap
+linkedHashmap vs concurrent hashmap.
+5 Random numbers in list with stream
+spring modules
+
+Drawback of Autowired
+How to handle transaction in microservices
+How to provide security in microservice
+Hashmap vs treemap
+Finalized
+why we use default method
+stream intermediate and terminal methods
+Lazy loading
+Java 8 Date api
+object methods.
+redis performance tuning
+redis poulating data
+message queue
+throws vs throw
+lazy loading 
+what is ORM in Hibernate
+View in sql
+indexing
+can their be two foreign key
+Transaction
+How to synchronise producer and consumer in thread 
+Future in Thread
+Http status codes
+what is hascode method being used
+what does springboot application annotation 
+
+how to know how many objects of class is created.
+get second highest salary of employee usdoesing stream. and sql
+how to make class immutable
+parallem stream
+concurrent hashmap
+
+How transaction work 
+how to configure two databases
+how to do pagination in spring boot
+how synchronisation works in multithreading
+lifecycle of thead
+
+what is throwable
+what is diff bet throw and throwable
+how to create custom checked exception
+how to make class as immutable
+
+when to use abstract method and interface
+can two interface with  different default method definition and same signature implemented in class
+
+second highest salary in sql
+spring vs spring boot
+authentication vs authorization
+different way to deploy application in spring boot
+
+public class A
+{
+String print()
+{
+sysout("")
+}
+}
+
+public class B extends class A
+{
+Object print()
+{
+sysout("");
+}
+}
+
+==========================
+
+How to keep redis state after restart
+Starr vs run method
+How to stop all thread after completing job 
+What method is used to register thread
+How to callback bean
+How to give exception in spring boot
+How to read redis data 
+Can thread access two methids at time
+What is throw and throws
+Facade design patterns
+
+
+Mongo lazy load
+
+
+classloader in java
+memory managment
+m+1 problem
+Authentication and Authorisation
+
+synchronise hashmap vs concurrent hashmap
+put vs post
+controller vs restcontroller
+how to use profile 
+flatmap vs map
+comparator in java 8 
+
+
+No, you cannot make an abstract class or method final in Java 
+Abstract claas cannot be instantiated
+
+Hashmap
+
+It uses equals() method of the Object class to compare keys. The equals() method of Map class overrides it.	
+Hashmap is faster
+
+Treemap
+It uses the compareTo() method to compare keys.
+Treemap is used for natural order sorting
+Treemap slower than hashmap
+
+
+Synchronised hashmap
+Slower
+It locks whole operation
+
+
+Concurrent hashmap
+Faster
+Thread Locks for add/update but get operation can perform by multiple threads
+
+Data hiding vs abstraction
+Stack vs heap
+Class loader

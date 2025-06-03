@@ -1,0 +1,18 @@
+Left join without any matching value
+How to increase heap memory
+Heap vs stack
+Character count in file
+Primary caching vs secondary caching 
+Onetomany mapping coding
+Query optimization
+Collection for faster retrieval and addition 
+Outofmemory
+Collection for unique and sorted 
+Hashmap value as a list of strings 
+Final class and constructor
+String pool
+Marker interface
+Memory allocation
+Functional interface
+Lambda expression
+String Api
